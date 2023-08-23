@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://fyn-assignment-backend.vercel.app/";
+const baseUrl = "http://localhost:5000/";
 //--------------------------------------Pric Calc---------------------------------------------------------
 const urlPrice = baseUrl + "price";
 
