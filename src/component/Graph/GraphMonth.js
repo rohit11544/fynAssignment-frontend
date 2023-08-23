@@ -1,16 +1,16 @@
+// Graph.js
 import React, { useState, useEffect } from "react";
 import BarGraph from "./BarGraph";
+import axios from "axios";
 
 const GraphMonth = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://vercel.com/rohit11544/fyn-assignment-backend/raid/getPriceOfMonth"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
+    axios
+      .get("https://fyn-assignment-backend.vercel.app/raid/getPriceOfMonth")
+      .then((response) => {
+        setData(response.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -19,7 +19,7 @@ const GraphMonth = () => {
 
   return (
     <div>
-      <h1>Monthly Prices</h1>
+      <h1>Yearly Prices</h1>
       <BarGraph data={data} />
     </div>
   );
